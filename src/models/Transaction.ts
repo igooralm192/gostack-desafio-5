@@ -1,20 +1,22 @@
-import { uuid } from 'uuidv4';
+import { uuid } from 'uuidv4'
+
+export type TransactionType = 'income' | 'outcome'
 
 class Transaction {
-  id: string;
+	id: string
 
-  title: string;
+	title: string
 
-  value: number;
+	value: number
 
-  type: 'income' | 'outcome';
+	type: TransactionType
 
-  constructor({ title, value, type }: Omit<Transaction, 'id'>) {
-    this.id = uuid();
-    this.title = title;
-    this.value = value;
-    this.type = type;
-  }
+	constructor({ title, value, type }: Omit<Transaction, 'id'>) {
+		this.id = uuid()
+		this.title = title
+		this.value = value
+		this.type = type
+	}
 }
 
-export default Transaction;
+export default Transaction
